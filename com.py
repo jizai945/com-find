@@ -27,6 +27,7 @@ def version():
 @click.option('--vid', help='输入要查找的vid的16进制, 如: --vid=0x1234')
 @click.option('--pid', help='输入要查找的pid的16进制, 如: --pid=0x4321')
 def find(vid:str, pid:str):
+    '''通过指定 vid pid号 查找com口名称'''
     port_list = list(serial.tools.list_ports.comports())
     vid_int = int(vid, 16)
     pid_int = int(pid, 16)
